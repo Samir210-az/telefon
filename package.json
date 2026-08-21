@@ -1,0 +1,20 @@
+{
+  "name": "sg-ai-voice-agent",
+  "version": "0.1.0",
+  "description": "SECURITY GROUP - Telefon zengini qebul edib AI ile canli cavablandiran server (Twilio + Whisper + Groq + ElevenLabs)",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0",
+    "dotenv": "^16.4.5",
+    "twilio": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
