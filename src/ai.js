@@ -49,11 +49,13 @@ export async function getAgentReply(conversationHistory, userText) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: process.env.GROQ_MODEL || 'llama-3.3-70b-versatile',
+      model: process.env.GROQ_MODEL || 'openai/gpt-oss-120b',
       messages,
       // Telefon danışığı üçün cavablar QISA olmalıdır - uzun cavab
       // gecikməni artırır və dinləyici üçün yorucu olur.
-      max_tokens: 150,
+      // gpt-oss reasoning modelidir: düşüncə tokenləri də limitə daxildir.
+      max_tokens: 400,
+      reasoning_effort: 'low',
       temperature: 0.6,
     }),
   });
